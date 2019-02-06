@@ -8,23 +8,21 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, StreamDelegate {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    let headbandReceiver = HeadbandReceiver()
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewDidLoad()
+        headbandReceiver.delegate = self
+        headbandReceiver.setupNetworkConnection()
     }
-    */
+}
 
+extension HomeViewController:HeadbandReceiverDelegate {
+    func receivedMessage(message: HeadbandMessage) {
+        print("message in VC with alpha at \(message.alphaRelaxation)")
+        
+    }
 }
