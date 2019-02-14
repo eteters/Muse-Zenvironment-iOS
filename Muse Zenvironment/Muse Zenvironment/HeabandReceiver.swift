@@ -22,6 +22,7 @@ class HeadbandReceiver: NSObject {
     weak var delegate:HeadbandReceiverDelegate? //why weak?
     
     func setupNetworkConnection() {
+        //why unmanaged?
         var readStream: Unmanaged<CFReadStream>?
         var writeStream: Unmanaged<CFWriteStream>?
 
