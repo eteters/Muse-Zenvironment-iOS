@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AE553138220B4C0400B1393B /* HeadbandMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE553137220B4C0400B1393B /* HeadbandMessage.swift */; };
+		AE5531612213B80C00B1393B /* ZVOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5531602213B80C00B1393B /* ZVOption.swift */; };
+		AE5531632213BC6100B1393B /* TextButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5531622213BC6100B1393B /* TextButtonTableViewCell.swift */; };
+		AE5531652213BC8D00B1393B /* ButtonIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5531642213BC8D00B1393B /* ButtonIndicatorTableViewCell.swift */; };
 		AE7E8C0C2202309E00B6A4EC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E8C0B2202309E00B6A4EC /* HomeViewController.swift */; };
 		AE7E8C0E220238D800B6A4EC /* HeabandReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E8C0D220238D800B6A4EC /* HeabandReceiver.swift */; };
 		AEE77AFD220225670042AE11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE77AFC220225670042AE11 /* AppDelegate.swift */; };
@@ -85,6 +88,9 @@
 
 /* Begin PBXFileReference section */
 		AE553137220B4C0400B1393B /* HeadbandMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadbandMessage.swift; sourceTree = "<group>"; };
+		AE5531602213B80C00B1393B /* ZVOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZVOption.swift; sourceTree = "<group>"; };
+		AE5531622213BC6100B1393B /* TextButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonTableViewCell.swift; sourceTree = "<group>"; };
+		AE5531642213BC8D00B1393B /* ButtonIndicatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIndicatorTableViewCell.swift; sourceTree = "<group>"; };
 		AE7E8C0B2202309E00B6A4EC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AE7E8C0D220238D800B6A4EC /* HeabandReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeabandReceiver.swift; sourceTree = "<group>"; };
 		AEE77AF9220225670042AE11 /* Muse Zenvironment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Muse Zenvironment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +151,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE5531662213BC9400B1393B /* Table view cells */ = {
+			isa = PBXGroup;
+			children = (
+				AE5531622213BC6100B1393B /* TextButtonTableViewCell.swift */,
+				AE5531642213BC8D00B1393B /* ButtonIndicatorTableViewCell.swift */,
+			);
+			path = "Table view cells";
+			sourceTree = "<group>";
+		};
 		AEE77AF0220225670042AE11 = {
 			isa = PBXGroup;
 			children = (
@@ -174,9 +189,11 @@
 			children = (
 				AEE77AFC220225670042AE11 /* AppDelegate.swift */,
 				AEE77B00220225670042AE11 /* Main.storyboard */,
+				AE5531602213B80C00B1393B /* ZVOption.swift */,
 				AE553137220B4C0400B1393B /* HeadbandMessage.swift */,
 				AE7E8C0B2202309E00B6A4EC /* HomeViewController.swift */,
 				AE7E8C0D220238D800B6A4EC /* HeabandReceiver.swift */,
+				AE5531662213BC9400B1393B /* Table view cells */,
 				AEE77B032202256B0042AE11 /* Assets.xcassets */,
 				AEE77B052202256B0042AE11 /* LaunchScreen.storyboard */,
 				AEE77B082202256B0042AE11 /* Info.plist */,
@@ -418,10 +435,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE5531652213BC8D00B1393B /* ButtonIndicatorTableViewCell.swift in Sources */,
 				AE553138220B4C0400B1393B /* HeadbandMessage.swift in Sources */,
 				AEE77AFD220225670042AE11 /* AppDelegate.swift in Sources */,
 				AE7E8C0C2202309E00B6A4EC /* HomeViewController.swift in Sources */,
 				AE7E8C0E220238D800B6A4EC /* HeabandReceiver.swift in Sources */,
+				AE5531632213BC6100B1393B /* TextButtonTableViewCell.swift in Sources */,
+				AE5531612213B80C00B1393B /* ZVOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
