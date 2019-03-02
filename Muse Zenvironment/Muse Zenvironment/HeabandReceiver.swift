@@ -11,6 +11,7 @@ import UIKit
 
 protocol HeadbandReceiverDelegate: class {
     func receivedMessage(message: HeadbandMessage)
+    func messageError(errorString: String)
 }
 
 
@@ -49,12 +50,15 @@ extension HeadbandReceiver: StreamDelegate {
             readAvailableBytes(stream: aStream as! InputStream)
         case Stream.Event.endEncountered:
             print("new message received")
+            //not sure what case this is, end of connection? If so, needs .messageError
         case Stream.Event.errorOccurred:
             print("error occurred")
+            delegate?.messageError(errorString: "Stream error occurred")
         case Stream.Event.hasSpaceAvailable:
             print("has space available")
         default:
             print("some other event...")
+            delegate?.messageError(errorString: "Stream error occurred")
             break
         }
     }
@@ -68,6 +72,7 @@ extension HeadbandReceiver: StreamDelegate {
             if numberOfBytesRead < 0 {
                 if let _ = stream.streamError{
                     print("stream error?")
+                    delegate?.messageError(errorString: "Stream error occurred")
                     break
                 }
             }
@@ -77,6 +82,7 @@ extension HeadbandReceiver: StreamDelegate {
             }
             else {
                 print("error!")
+                delegate?.messageError(errorString: "Stream error occurred")
             }
         }
     }
@@ -100,6 +106,7 @@ extension HeadbandReceiver: StreamDelegate {
             let messageObject = try? JSONDecoder().decode(HeadbandMessage.self, from: data )
         else{
             print("could not convert string message into message object")
+            delegate?.messageError(errorString: "could not convert string message into message object")
             return nil
         }
         

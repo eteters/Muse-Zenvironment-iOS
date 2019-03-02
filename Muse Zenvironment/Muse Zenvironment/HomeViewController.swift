@@ -28,8 +28,11 @@ class HomeViewController: UIViewController, StreamDelegate {
     
     override func viewWillAppear(_ animated: Bool){
         super.viewDidLoad()
+        colorView.layer.borderWidth = 1
+        colorView.layer.borderColor = UIColor.black.cgColor
+        getRelaxed.text = "Not Connected"
+        self.colorView.layer.cornerRadius = self.colorView.frame.width/2
         headbandReceiver.delegate = self
-        headbandReceiver.setupNetworkConnection()
         settingsButton.isHidden = true
     }
     
@@ -60,15 +63,21 @@ class HomeViewController: UIViewController, StreamDelegate {
 extension HomeViewController:HeadbandReceiverDelegate {
     func receivedMessage(message: HeadbandMessage) {
         print("message in VC with alpha at \(message.alphaRelaxation)")
+        getRelaxed.text = "Connected" 
         let red   = CGFloat(message.alphaRelaxation) //* 255.0
         let green = CGFloat(message.betaConcentration) //* 255.0
         let blue  = CGFloat(message.thetaRelaxation) //* 255.0
         let alpha = CGFloat(1.0)
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: [.repeat,.autoreverse], animations: {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: [], animations: {
             self.colorView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
-            self.colorView.layer.cornerRadius = self.colorView.frame.width/2
             self.getRelaxed.textColor = UIColor(red: 1-red, green: 1-green, blue: 1-blue, alpha: alpha)
         }, completion: nil)
+    }
+    
+    func messageError(errorString: String) {
+        print("uhh I'm being told the connection has stopped for reason: \(errorString)")
+        getRelaxed.text = "Not Connected"
+        colorView.backgroundColor = UIColor.clear
     }
 }
 
@@ -113,6 +122,8 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
         default:
             return
         }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
