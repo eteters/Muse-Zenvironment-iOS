@@ -61,6 +61,8 @@ class HomeViewController: UIViewController, StreamDelegate {
 //Thing I implement to fulfil my role as a delegate so I can receive messages on the receiver's time
 //Also where the color happens
 extension HomeViewController:HeadbandReceiverDelegate {
+    //TODO: This is the place to put in a connection to the lights, since here is where the data is. Might want another object to handle it since this viewcontroller is getting big.
+    //Use the Model of ExcusifyIos to see how to set up a UrlRequest for the connection!
     func receivedMessage(message: HeadbandMessage) {
         print("message in VC with alpha at \(message.alphaRelaxation)")
         getRelaxed.text = "Connected" 
