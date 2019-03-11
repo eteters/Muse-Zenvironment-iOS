@@ -20,6 +20,8 @@ class HomeViewController: UIViewController, StreamDelegate {
     
     //init the receiver
     let headbandReceiver = HeadbandReceiver()
+    //make the light connector
+    let lightConnector = LightConnector()
     //Set up settings objects
     let optionNames = [ ZVOption(name:"Connect to Headband" , type: OptionType.textButton),
                         ZVOption(name: "Connection to Lights", type: .textButton),
@@ -70,6 +72,9 @@ extension HomeViewController:HeadbandReceiverDelegate {
         let green = CGFloat(message.betaConcentration) //* 255.0
         let blue  = CGFloat(message.thetaRelaxation) //* 255.0
         let alpha = CGFloat(1.0)
+        lightConnector.lightHttpCall(dispatchQueueForHandler: DispatchQueue.main) { (statusMessage) in
+            print(statusMessage)
+        }
         UIView.animate(withDuration: 1.0, delay: 0.0, options: [], animations: {
             self.colorView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
             self.getRelaxed.textColor = UIColor(red: 1-red, green: 1-green, blue: 1-blue, alpha: alpha)
