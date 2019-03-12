@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		600C814B22360D63003CBC96 /* StatusInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B74C632228B9D00019AE76 /* StatusInterfaceController.swift */; };
 		AE553138220B4C0400B1393B /* HeadbandMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE553137220B4C0400B1393B /* HeadbandMessage.swift */; };
 		AE5531612213B80C00B1393B /* ZVOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5531602213B80C00B1393B /* ZVOption.swift */; };
 		AE5531632213BC6100B1393B /* TextButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5531622213BC6100B1393B /* TextButtonTableViewCell.swift */; };
@@ -87,6 +88,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		60B74C632228B9D00019AE76 /* StatusInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusInterfaceController.swift; sourceTree = "<group>"; };
 		AE553137220B4C0400B1393B /* HeadbandMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadbandMessage.swift; sourceTree = "<group>"; };
 		AE5531602213B80C00B1393B /* ZVOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZVOption.swift; sourceTree = "<group>"; };
 		AE5531622213BC6100B1393B /* TextButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonTableViewCell.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		AEE77B342202256C0042AE11 /* Muse Zenvironment WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				60B74C632228B9D00019AE76 /* StatusInterfaceController.swift */,
 				AEE77B352202256C0042AE11 /* InterfaceController.swift */,
 				AEE77B372202256C0042AE11 /* ExtensionDelegate.swift */,
 				AEE77B392202256C0042AE11 /* NotificationController.swift */,
@@ -467,6 +470,7 @@
 			files = (
 				AEE77B3A2202256C0042AE11 /* NotificationController.swift in Sources */,
 				AEE77B3C2202256C0042AE11 /* ComplicationController.swift in Sources */,
+				600C814B22360D63003CBC96 /* StatusInterfaceController.swift in Sources */,
 				AEE77B382202256C0042AE11 /* ExtensionDelegate.swift in Sources */,
 				AEE77B362202256C0042AE11 /* InterfaceController.swift in Sources */,
 			);
