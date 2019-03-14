@@ -19,7 +19,7 @@ class LightConnector {
     
     //var allowedCharacterSet = (CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[] ").inverted)
 
-    func lightHttpCall(dispatchQueueForHandler:DispatchQueue, completionHandler: @escaping (String?) -> Void){
+    func lightHttpCall(request:LightRequest, dispatchQueueForHandler:DispatchQueue, completionHandler: @escaping (String?) -> Void){
 //        guard let escapedSearchText = SearchText.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet) else {
 //            dispatchQueueForHandler.async {
 //                completionHandler("Couldn't add percent encoding")
@@ -43,7 +43,7 @@ class LightConnector {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "PUT"
-        if let data = try? JSONEncoder().encode(testRequest) {
+        if let data = try? JSONEncoder().encode(request) {
             urlRequest.httpBody = data
         }
         

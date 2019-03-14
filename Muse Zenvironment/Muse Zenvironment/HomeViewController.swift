@@ -72,7 +72,11 @@ extension HomeViewController:HeadbandReceiverDelegate {
         let green = CGFloat(message.betaConcentration) //* 255.0
         let blue  = CGFloat(message.thetaRelaxation) //* 255.0
         let alpha = CGFloat(1.0)
-        lightConnector.lightHttpCall(dispatchQueueForHandler: DispatchQueue.main) { (statusMessage) in
+        let request = LightRequest(on: true,
+                                   sat: Int(message.alphaRelaxation * 255),
+                                   bri: Int(message.betaConcentration * 255),
+                                   hue: Int(message.thetaRelaxation * 65536))
+        lightConnector.lightHttpCall(request: request, dispatchQueueForHandler: DispatchQueue.main) { (statusMessage) in
             print(statusMessage)
         }
         UIView.animate(withDuration: 1.0, delay: 0.0, options: [], animations: {
