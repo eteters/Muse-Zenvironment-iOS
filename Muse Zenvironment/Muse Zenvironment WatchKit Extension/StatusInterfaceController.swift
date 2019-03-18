@@ -7,23 +7,8 @@
 //
 
 import WatchKit
-//import HealthKit
+import HealthKit
 import Foundation
-
-//if HKHealthStore.isHealthDataAvailable() {
-    //let healthStore = HKHealthStore()
-    //let allTypes = Set([HKObjectType.workoutType(),
-        //HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-        //HKObjectType.quantityType(forIdentifier: .distanceCycling)!,
-        //HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
-        //HKObjectType.quantityType(forIdentifier: .heartRate)!])
-
-    //healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
-        //if !success {
-            // Handle the error here.
-        //}
-    //}
-//}
 
 // if( phone is using watch ){
 //      check if have healthstore permissions (tentative code above)
@@ -45,11 +30,28 @@ class StatusInterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-            statusLabel.setText("Beep Boop")
+        //tentative maybe change the text color!?!?!?
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
+        
+        // Assume watch is connected with iphone, check whether healthkit
+        
+        if HKHealthStore.isHealthDataAvailable() {
+            let healthStore = HKHealthStore()
+            let allTypes = Set([HKObjectType.workoutType(),
+                                HKObjectType.quantityType(forIdentifier: .heartRate)!])
+        
+            healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
+                if !success {
+                    //Handle the error here.
+                    self.statusLabel.setText("HealthKit Authorization Rekt Wirireds")
+                } else {
+                    self.statusLabel.setText("HealthKit Active, Sharing Data with Zenvironment")
+                }
+            }
+        }
         super.willActivate()
     }
 

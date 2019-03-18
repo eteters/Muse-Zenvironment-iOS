@@ -16,7 +16,7 @@
                         <nowPlayingView alignment="left" id="gcc-eI-QuB"/>
                     </items>
                     <connections>
-                        <segue destination="1FN-gh-T7v" kind="relationship" relationship="nextPage" id="ubQ-Fa-LoL"/>
+                        <segue destination="1FN-gh-T7v" kind="relationship" relationship="nextPage" id="Qvc-lg-DiU"/>
                     </connections>
                 </controller>
             </objects>
@@ -27,7 +27,7 @@
             <objects>
                 <controller id="1FN-gh-T7v" customClass="StatusInterfaceController" customModule="Muse_Zenvironment_WatchKit_Extension">
                     <items>
-                        <label width="130" height="18" alignment="left" text="Label" id="ZAA-gv-Vbv"/>
+                        <label width="132" alignment="center" text="Label" textAlignment="center" numberOfLines="3" id="ZAA-gv-Vbv"/>
                         <imageView height="118" alignment="left" id="RAi-BK-y1g"/>
                     </items>
                     <connections>
@@ -36,7 +36,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="496" y="345"/>
+            <point key="canvasLocation" x="497" y="345"/>
         </scene>
     </scenes>
 </document>

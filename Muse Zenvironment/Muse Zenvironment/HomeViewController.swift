@@ -109,6 +109,12 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
         case 0:
             //attempting connection
             headbandReceiver.setupNetworkConnection()
+        //case 2:
+            //something happens for watch
+            //flip on, check if actually bluetooth connection ..? watch exists?
+            // establish data connection between watch and iphone
+            // data usage true/false
+            // buffer for healthkit packet
 
         default:
             return
