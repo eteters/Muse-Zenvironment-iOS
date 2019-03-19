@@ -36,7 +36,7 @@ class StatusInterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         
-        // Assume watch is connected with iphone, check whether healthkit
+        // Assume watch is connected with iphone, check whether healthkit is authorized
         
         if HKHealthStore.isHealthDataAvailable() {
             let healthStore = HKHealthStore()

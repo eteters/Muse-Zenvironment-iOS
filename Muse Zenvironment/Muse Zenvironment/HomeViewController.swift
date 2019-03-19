@@ -24,7 +24,8 @@ class HomeViewController: UIViewController, StreamDelegate {
     let optionNames = [ ZVOption(name:"Connect to Headband" , type: OptionType.textButton),
                         ZVOption(name: "Connection to Lights", type: .textButton),
                         ZVOption(name: "Connection to Watch", type: .indicator),
-                        ZVOption(name: "Switch Zenvironment Mode", type: .textButton) ]
+                        ZVOption(name: "Switch Zenvironment Mode", type: .textButton),
+                        ZVOption(name: "Authorize Health Data", type: .textButton) ]
     
     override func viewWillAppear(_ animated: Bool){
         super.viewDidLoad()
@@ -115,6 +116,20 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
             // establish data connection between watch and iphone
             // data usage true/false
             // buffer for healthkit packet
+        case 4:
+            HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
+                guard authorized else {
+                    let baseMessage = "HealthKit Authorization Failed"
+                    if let error = error {
+                        print("\(baseMessage). Reason: \(error.localizedDescription)")
+                    } else {
+                        print(baseMessage)
+                    }
+                return
+                }
+                
+                print("HealthKit Successfully Authorized.")
+            }
 
         default:
             return

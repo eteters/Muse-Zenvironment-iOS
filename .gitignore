@@ -71,3 +71,6 @@ fastlane/test_output
 Muse Zenvironment/Muse Zenvironment WatchKit App/Info.plist
 Muse Zenvironment/Muse Zenvironment WatchKit Extension/Info.plist
 Muse Zenvironment/Muse Zenvironment.xcodeproj/project.pbxproj
+Muse Zenvironment/Muse Zenvironment WatchKit App/Info.plist
+Muse Zenvironment/Muse Zenvironment WatchKit App/Muse Zenvironment WatchKit App.entitlements
+*.plist
