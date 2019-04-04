@@ -51,7 +51,12 @@ class HealthKitSetupAssistant {
       let bodyMassIndex = HKObjectType.quantityType(forIdentifier: .bodyMassIndex),
       let height = HKObjectType.quantityType(forIdentifier: .height),
       let bodyMass = HKObjectType.quantityType(forIdentifier: .bodyMass),
-      let activeEnergy = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)
+      let activeEnergy = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned),
+      let heartRate = HKObjectType.quantityType(forIdentifier: .heartRate),
+      let hrVariability = HKObjectType.quantityType(forIdentifier: .heartRateVariabilitySDNN),
+      let rHeartRate = HKObjectType.quantityType(forIdentifier: .restingHeartRate),
+      let vo2Max = HKObjectType.quantityType(forIdentifier: .vo2Max)
+        
       else {
         completion(false, HealthkitSetupError.dataTypeNotAvailable)
         return
@@ -67,7 +72,11 @@ class HealthKitSetupAssistant {
                                                    bodyMassIndex,
                                                    height,
                                                    bodyMass,
-                                                   HKObjectType.workoutType()]
+                                                   HKObjectType.workoutType(),
+                                                   heartRate,
+                                                   hrVariability,
+                                                   rHeartRate,
+                                                   vo2Max]
     
     //4. Request Authorization
     HKHealthStore().requestAuthorization(toShare: healthKitTypesToWrite,

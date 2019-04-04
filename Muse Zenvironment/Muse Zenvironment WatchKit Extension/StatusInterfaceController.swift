@@ -40,8 +40,10 @@ class StatusInterfaceController: WKInterfaceController {
         
         if HKHealthStore.isHealthDataAvailable() {
             let healthStore = HKHealthStore()
-            let allTypes = Set([HKObjectType.workoutType(),
-                                HKObjectType.quantityType(forIdentifier: .heartRate)!])
+            let allTypes = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                                HKObjectType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
+                                HKObjectType.quantityType(forIdentifier: .restingHeartRate)!,
+                                HKObjectType.quantityType(forIdentifier: .vo2Max)!])
         
             healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
                 if !success {
