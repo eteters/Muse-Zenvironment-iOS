@@ -27,10 +27,18 @@ class StatusInterfaceController: WKInterfaceController {
 
     @IBOutlet weak var statusLabel: WKInterfaceLabel!
     @IBOutlet weak var colorImage: WKInterfaceImage!
+    let healthStore = HKHealthStore()
+    let config = HKWorkoutConfiguration()
+    var workoutSession:HKWorkoutSession?
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         //tentative maybe change the text color!?!?!?
+        config.activityType = .running
+        guard let workoutSession = try? HKWorkoutSession(healthStore: healthStore, configuration: config) else {
+            return
+        }
+        workoutSession.startActivity(with: Date())
     }
 
     override func willActivate() {
@@ -39,7 +47,6 @@ class StatusInterfaceController: WKInterfaceController {
         // Assume watch is connected with iphone, check whether healthkit is authorized
         
         if HKHealthStore.isHealthDataAvailable() {
-            let healthStore = HKHealthStore()
             let allTypes = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!,
                                 HKObjectType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
                                 HKObjectType.quantityType(forIdentifier: .restingHeartRate)!,
@@ -59,6 +66,7 @@ class StatusInterfaceController: WKInterfaceController {
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
+        workoutSession?.end()
         super.didDeactivate()
     }
 
