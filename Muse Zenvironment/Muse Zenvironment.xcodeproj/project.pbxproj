@@ -14,6 +14,7 @@
 		AE5531652213BC8D00B1393B /* ButtonIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5531642213BC8D00B1393B /* ButtonIndicatorTableViewCell.swift */; };
 		AE7E8C0C2202309E00B6A4EC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E8C0B2202309E00B6A4EC /* HomeViewController.swift */; };
 		AE7E8C0E220238D800B6A4EC /* HeabandReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E8C0D220238D800B6A4EC /* HeabandReceiver.swift */; };
+		AEA9026D225D473C0098DEC9 /* MotionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA9026B225D47360098DEC9 /* MotionInterfaceController.swift */; };
 		AEC35A44224195EC0074A0E4 /* StatusInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC35A43224195E10074A0E4 /* StatusInterfaceController.swift */; };
 		AEC35A472241960A0074A0E4 /* WatchReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC35A45224196070074A0E4 /* WatchReceiver.swift */; };
 		AEC35A49224196280074A0E4 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC35A48224196280074A0E4 /* HealthKitSetupAssistant.swift */; };
@@ -100,6 +101,7 @@
 		AE5531642213BC8D00B1393B /* ButtonIndicatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIndicatorTableViewCell.swift; sourceTree = "<group>"; };
 		AE7E8C0B2202309E00B6A4EC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AE7E8C0D220238D800B6A4EC /* HeabandReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeabandReceiver.swift; sourceTree = "<group>"; };
+		AEA9026B225D47360098DEC9 /* MotionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionInterfaceController.swift; sourceTree = "<group>"; };
 		AEC35A43224195E10074A0E4 /* StatusInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusInterfaceController.swift; path = "Muse Zenvironment WatchKit Extension/StatusInterfaceController.swift"; sourceTree = SOURCE_ROOT; };
 		AEC35A45224196070074A0E4 /* WatchReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchReceiver.swift; sourceTree = "<group>"; };
 		AEC35A48224196280074A0E4 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthKitSetupAssistant.swift; path = "/Users/evanteters/Documents/College/Senior/Capstone top level project/Muse-Zenvironment-iOS/Muse Zenvironment/Muse Zenvironment/HealthKitSetupAssistant.swift"; sourceTree = "<absolute>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				AE4364A422419BE0008C5486 /* Muse Zenvironment WatchKit Extension.entitlements */,
+				AEA9026B225D47360098DEC9 /* MotionInterfaceController.swift */,
 				AEC35A43224195E10074A0E4 /* StatusInterfaceController.swift */,
 				AEE77B352202256C0042AE11 /* InterfaceController.swift */,
 				AEE77B372202256C0042AE11 /* ExtensionDelegate.swift */,
@@ -376,6 +379,7 @@
 				TargetAttributes = {
 					AEE77AF8220225670042AE11 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -511,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEE77B3A2202256C0042AE11 /* NotificationController.swift in Sources */,
+				AEA9026D225D473C0098DEC9 /* MotionInterfaceController.swift in Sources */,
 				AEE77B3C2202256C0042AE11 /* ComplicationController.swift in Sources */,
 				AEC35A44224195EC0074A0E4 /* StatusInterfaceController.swift in Sources */,
 				AEE77B382202256C0042AE11 /* ExtensionDelegate.swift in Sources */,
@@ -788,16 +793,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Muse Zenvironment/Muse Zenvironment.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MWH8N2QRUE;
 				INFOPLIST_FILE = "Muse Zenvironment/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Teters.Muse-Zenvironment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -807,10 +815,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Muse Zenvironment/Muse Zenvironment.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MWH8N2QRUE;
 				INFOPLIST_FILE = "Muse Zenvironment/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

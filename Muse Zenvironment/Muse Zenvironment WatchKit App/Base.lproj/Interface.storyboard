@@ -28,15 +28,46 @@
                 <controller id="LRi-tr-siY" customClass="StatusInterfaceController" customModule="Muse_Zenvironment_WatchKit_Extension">
                     <items>
                         <label width="132" alignment="center" text="Label" textAlignment="center" numberOfLines="3" id="3rg-Xe-qdi"/>
-                        <imageView height="118" alignment="left" id="dQz-NT-tTn"/>
+                        <button width="1" alignment="left" title="Start" id="QFs-Hv-Btz">
+                            <connections>
+                                <action selector="workoutButtonPressed" destination="LRi-tr-siY" id="N39-PM-iks"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="HaertRayte" id="I6E-Z4-zzW"/>
                     </items>
                     <connections>
-                        <outlet property="colorImage" destination="dQz-NT-tTn" id="xry-yy-M0m"/>
+                        <outlet property="heartRateLabel" destination="I6E-Z4-zzW" id="ffv-0a-zpI"/>
                         <outlet property="statusLabel" destination="3rg-Xe-qdi" id="nAh-B4-xKU"/>
+                        <outlet property="workoutButton" destination="QFs-Hv-Btz" id="o8X-PM-IHH"/>
+                        <segue destination="Bo4-rt-Rg1" kind="relationship" relationship="nextPage" id="7UM-Zq-5m0"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="497" y="345"/>
+        </scene>
+        <!--Motion Interface Controller-->
+        <scene sceneID="9ZG-Ad-5Qd">
+            <objects>
+                <controller id="Bo4-rt-Rg1" customClass="MotionInterfaceController" customModule="Muse_Zenvironment_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Gravity" id="uIK-EY-ETf"/>
+                        <label alignment="left" text="gr" id="ipg-2s-crS"/>
+                        <label alignment="left" text="User Acceleration" id="uFC-Dc-sn4"/>
+                        <label alignment="left" text="ua" id="xQ9-hW-eAg"/>
+                        <label alignment="left" text="Rotation" id="n9W-Xk-usT"/>
+                        <label height="20" alignment="left" text="ro" id="sP8-aj-7wt"/>
+                        <label alignment="left" text="Attitude" id="iZD-Zl-5eb"/>
+                        <label alignment="left" text="at" id="6qc-XJ-Erb"/>
+                    </items>
+                    <connections>
+                        <outlet property="accelerationLabel" destination="xQ9-hW-eAg" id="GlD-hY-CEh"/>
+                        <outlet property="attitudeLabel" destination="6qc-XJ-Erb" id="gLv-Fr-pUq"/>
+                        <outlet property="gravityLabel" destination="ipg-2s-crS" id="SC9-wo-mgv"/>
+                        <outlet property="rotationLabel" destination="sP8-aj-7wt" id="btW-z8-dh7"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="740" y="352"/>
         </scene>
     </scenes>
 </document>
