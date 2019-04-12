@@ -12,9 +12,13 @@
 		AE5531612213B80C00B1393B /* ZVOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5531602213B80C00B1393B /* ZVOption.swift */; };
 		AE5531632213BC6100B1393B /* TextButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5531622213BC6100B1393B /* TextButtonTableViewCell.swift */; };
 		AE5531652213BC8D00B1393B /* ButtonIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5531642213BC8D00B1393B /* ButtonIndicatorTableViewCell.swift */; };
+		AE614892225FD47400100821 /* SessionDelegater.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE614891225FD47400100821 /* SessionDelegater.swift */; };
+		AE614893225FD47400100821 /* SessionDelegater.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE614891225FD47400100821 /* SessionDelegater.swift */; };
 		AE7E8C0C2202309E00B6A4EC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E8C0B2202309E00B6A4EC /* HomeViewController.swift */; };
 		AE7E8C0E220238D800B6A4EC /* HeabandReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E8C0D220238D800B6A4EC /* HeabandReceiver.swift */; };
 		AEA9026D225D473C0098DEC9 /* MotionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA9026B225D47360098DEC9 /* MotionInterfaceController.swift */; };
+		AEA90270225FC2800098DEC9 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA9026F225FC2800098DEC9 /* HeartRateManager.swift */; };
+		AEA90272225FCD8E0098DEC9 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA90271225FCD8E0098DEC9 /* MotionManager.swift */; };
 		AEC35A44224195EC0074A0E4 /* StatusInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC35A43224195E10074A0E4 /* StatusInterfaceController.swift */; };
 		AEC35A472241960A0074A0E4 /* WatchReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC35A45224196070074A0E4 /* WatchReceiver.swift */; };
 		AEC35A49224196280074A0E4 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC35A48224196280074A0E4 /* HealthKitSetupAssistant.swift */; };
@@ -99,9 +103,12 @@
 		AE5531602213B80C00B1393B /* ZVOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZVOption.swift; sourceTree = "<group>"; };
 		AE5531622213BC6100B1393B /* TextButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonTableViewCell.swift; sourceTree = "<group>"; };
 		AE5531642213BC8D00B1393B /* ButtonIndicatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIndicatorTableViewCell.swift; sourceTree = "<group>"; };
+		AE614891225FD47400100821 /* SessionDelegater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegater.swift; sourceTree = "<group>"; };
 		AE7E8C0B2202309E00B6A4EC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AE7E8C0D220238D800B6A4EC /* HeabandReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeabandReceiver.swift; sourceTree = "<group>"; };
 		AEA9026B225D47360098DEC9 /* MotionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionInterfaceController.swift; sourceTree = "<group>"; };
+		AEA9026F225FC2800098DEC9 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateManager.swift; sourceTree = "<group>"; };
+		AEA90271225FCD8E0098DEC9 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		AEC35A43224195E10074A0E4 /* StatusInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusInterfaceController.swift; path = "Muse Zenvironment WatchKit Extension/StatusInterfaceController.swift"; sourceTree = SOURCE_ROOT; };
 		AEC35A45224196070074A0E4 /* WatchReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchReceiver.swift; sourceTree = "<group>"; };
 		AEC35A48224196280074A0E4 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthKitSetupAssistant.swift; path = "/Users/evanteters/Documents/College/Senior/Capstone top level project/Muse-Zenvironment-iOS/Muse Zenvironment/Muse Zenvironment/HealthKitSetupAssistant.swift"; sourceTree = "<absolute>"; };
@@ -176,6 +183,14 @@
 			path = "Table view cells";
 			sourceTree = "<group>";
 		};
+		AEA9026E225FC1D90098DEC9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				AE614891225FD47400100821 /* SessionDelegater.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		AEC35A4B224196550074A0E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +203,7 @@
 		AEE77AF0220225670042AE11 = {
 			isa = PBXGroup;
 			children = (
+				AEA9026E225FC1D90098DEC9 /* Shared */,
 				AEE77AFB220225670042AE11 /* Muse Zenvironment */,
 				AEE77B102202256B0042AE11 /* Muse ZenvironmentTests */,
 				AEE77B1B2202256B0042AE11 /* Muse ZenvironmentUITests */,
@@ -263,7 +279,9 @@
 			children = (
 				AE4364A422419BE0008C5486 /* Muse Zenvironment WatchKit Extension.entitlements */,
 				AEA9026B225D47360098DEC9 /* MotionInterfaceController.swift */,
+				AEA90271225FCD8E0098DEC9 /* MotionManager.swift */,
 				AEC35A43224195E10074A0E4 /* StatusInterfaceController.swift */,
+				AEA9026F225FC2800098DEC9 /* HeartRateManager.swift */,
 				AEE77B352202256C0042AE11 /* InterfaceController.swift */,
 				AEE77B372202256C0042AE11 /* ExtensionDelegate.swift */,
 				AEE77B392202256C0042AE11 /* NotificationController.swift */,
@@ -484,6 +502,7 @@
 			files = (
 				AEC35A49224196280074A0E4 /* HealthKitSetupAssistant.swift in Sources */,
 				AE5531652213BC8D00B1393B /* ButtonIndicatorTableViewCell.swift in Sources */,
+				AE614892225FD47400100821 /* SessionDelegater.swift in Sources */,
 				AE553138220B4C0400B1393B /* HeadbandMessage.swift in Sources */,
 				AEC35A472241960A0074A0E4 /* WatchReceiver.swift in Sources */,
 				AEE77AFD220225670042AE11 /* AppDelegate.swift in Sources */,
@@ -514,12 +533,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE614893225FD47400100821 /* SessionDelegater.swift in Sources */,
 				AEE77B3A2202256C0042AE11 /* NotificationController.swift in Sources */,
 				AEA9026D225D473C0098DEC9 /* MotionInterfaceController.swift in Sources */,
 				AEE77B3C2202256C0042AE11 /* ComplicationController.swift in Sources */,
 				AEC35A44224195EC0074A0E4 /* StatusInterfaceController.swift in Sources */,
+				AEA90270225FC2800098DEC9 /* HeartRateManager.swift in Sources */,
 				AEE77B382202256C0042AE11 /* ExtensionDelegate.swift in Sources */,
 				AEE77B362202256C0042AE11 /* InterfaceController.swift in Sources */,
+				AEA90272225FCD8E0098DEC9 /* MotionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

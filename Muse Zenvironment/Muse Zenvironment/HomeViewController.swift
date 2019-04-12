@@ -10,7 +10,24 @@ import UIKit
 import HealthKit
 import WatchConnectivity
 
-class HomeViewController: UIViewController, StreamDelegate {
+class HomeViewController: UIViewController, StreamDelegate, WCSessionDelegate {
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        return
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        return
+    }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        return
+    }
+    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+        if let thing = userInfo["activity"] as? String {
+            getRelaxed.text = thing
+        }
+    }
+    
     //Interface outlet connections
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var downButton: UIButton!
@@ -33,16 +50,6 @@ class HomeViewController: UIViewController, StreamDelegate {
                         ZVOption(name: "Switch Zenvironment Mode", type: .textButton),
                         ZVOption(name: "Authorize Health Data", type: .textButton) ]
     
-    override func viewWillAppear(_ animated: Bool){
-        super.viewDidLoad()
-        colorView.layer.borderWidth = 1
-        colorView.layer.borderColor = UIColor.black.cgColor
-        getRelaxed.text = "Not Connected"
-        self.colorView.layer.cornerRadius = self.colorView.frame.width/2
-        headbandReceiver.delegate = self
-        settingsButton.isHidden = true
-    }
-    
     private let session: WCSession? = WCSession.isSupported() ? WCSession.default : nil
     
     var validSession: WCSession? {
@@ -59,6 +66,39 @@ class HomeViewController: UIViewController, StreamDelegate {
         return nil
     }
     
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewDidLoad()
+        colorView.layer.borderWidth = 1
+        colorView.layer.borderColor = UIColor.black.cgColor
+        getRelaxed.text = "Not Connected"
+        self.colorView.layer.cornerRadius = self.colorView.frame.width/2
+        headbandReceiver.delegate = self
+        settingsButton.isHidden = true
+        
+        
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(type(of: self).dataDidFlow(_:)),
+            name: .dataDidFlow, object: nil
+        )
+        
+        validSession?.activate()
+    }
+    
+    // .dataDidFlow notification handler.
+    // Update the UI based on the userInfo dictionary of the notification.
+    //
+    @objc
+    func dataDidFlow(_ notification: Notification) {
+        print("We made it!")
+        if let message = notification.object as? [String:Any]{
+            if let status = message["activity"] as? String {
+                print("Status is " + status)
+                getRelaxed.text = status
+            }
+        }
+    }
+
     //Settings buttons
     @IBAction func downButton(_ sender: Any) {
         downButton.isHidden = true

@@ -24,21 +24,12 @@ import CoreMotion
 //  statusLabel = "Not Active in Zenvironment"
 
 // Configure interface objects here.
-class StatusInterfaceController: WKInterfaceController {
-
+class StatusInterfaceController: WKInterfaceController, HeartDelegate {
     @IBOutlet weak var statusLabel: WKInterfaceLabel!
     @IBOutlet weak var colorImage: WKInterfaceImage!
     @IBOutlet weak var workoutButton: WKInterfaceButton!
-    let healthStore = HKHealthStore()
-    let config = HKWorkoutConfiguration()
-    var workoutSession:HKWorkoutSession?
     @IBOutlet weak var heartRateLabel: WKInterfaceLabel!
-    
-    let heartRateUnit: HKUnit = HKUnit.count().unitDivided(by: HKUnit.minute())//HKUnit.secondUnit(with: .milli) //
-    
-    var observerQuery:HKObserverQuery?
-    
-    
+    let heartRateManager = HeartRateManager()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -49,102 +40,34 @@ class StatusInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         
         // Assume watch is connected with iphone, check whether healthkit is authorized
+        heartRateManager.delegate = self
+        heartRateManager.startObserver()
         
-        
-
-        if HKHealthStore.isHealthDataAvailable() {
-            let allTypes = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!,
-                                HKObjectType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
-                                HKObjectType.quantityType(forIdentifier: .restingHeartRate)!,
-                                HKObjectType.quantityType(forIdentifier: .vo2Max)!])
-        
-            healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
-                if !success {
-                    //Handle the error here.
-                    self.statusLabel.setText("HealthKit Authorization Rekt Wirireds")
-                } else {
-                    self.statusLabel.setText("HealthKit Active, Sharing Data with Zenvironment")
-                }
-            }
-            let heartRateSampleType = HKObjectType.quantityType(forIdentifier: .heartRate)
-            
-            observerQuery = HKObserverQuery(sampleType: heartRateSampleType!, predicate: nil) { (_, _, error) in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                    return
-                }
-                
-                self.fetchLatestHeartRateSample { (sample) in
-                    guard let sample = sample else {
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        let heartRate = sample.quantity.doubleValue(for: self.heartRateUnit)
-                        print("Heart Rate Sample: \(heartRate)")
-                        self.heartRateLabel.setText("\(heartRate)")
-                    }
-                }
-            }
-            if let observerQuery = observerQuery {
-                healthStore.execute(observerQuery)
-            }
-            
-            
-            
-        }
         super.willActivate()
     }
-    
+
+    func respondToObserver(errorMsg: String?, heartRate: Double?) {
+        if let errorMsg = errorMsg{
+            statusLabel.setText(errorMsg)
+        }
+        else if let heartRate = heartRate{
+            statusLabel.setText("HealthKit Active, sharing with Zenvironment and looking for HeartRate")
+            heartRateLabel.setText("\(heartRate)")
+        }
+        else{
+            statusLabel.setText("There has been an error I don't understand")
+        }
+    }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
-        workoutSession?.end()
         super.didDeactivate()
     }
 
     @IBAction func workoutButtonPressed() {
         
-        if workoutSession?.state == HKWorkoutSessionState.running {
-            workoutSession?.end()
-            workoutSession = nil
-            workoutButton.setTitle("Stop")
-        }
-        else{
-            config.activityType = .running
-            guard let wSession = try? HKWorkoutSession(healthStore: healthStore, configuration: config) else {
-                return
-            }
-            wSession.startActivity(with: Date())
-            workoutSession = wSession
-            workoutButton.setTitle("Start")
-        }
+        workoutButton.setTitle(heartRateManager.handleWorkoutState())
         
-        
-    }
-    
-    
-    func fetchLatestHeartRateSample(completionHandler: @escaping (_ sample: HKQuantitySample?) -> Void) {
-        guard let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate) else {
-            completionHandler(nil)
-            return
-        }
-        
-        let predicate = HKQuery.predicateForSamples(withStart: Date.distantPast, end: Date(), options: .strictEndDate)
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-        let query = HKSampleQuery(sampleType: sampleType,
-                                  predicate: predicate,
-                                  limit: Int(HKObjectQueryNoLimit),
-                                  sortDescriptors: [sortDescriptor]) { (_, results, error) in
-                                    if let error = error {
-                                        print("Error: \(error.localizedDescription)")
-                                        return
-                                    }
-                                    
-                                    completionHandler(results?[0] as? HKQuantitySample)
-        }
-        
-        healthStore.execute(query)
     }
 
 }
