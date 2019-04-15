@@ -18,8 +18,12 @@ class HomeViewController: UIViewController, StreamDelegate {
     @IBOutlet weak var getRelaxed: UILabel!
     @IBOutlet weak var optionsTableView: UITableView!
     
+    @IBOutlet weak var backgroundView: UIImageView!
+    
     //init the receiver
     let headbandReceiver = HeadbandReceiver()
+    
+    let bgChanger = ZVTimer()
     //Set up settings objects
     let optionNames = [ ZVOption(name:"Connect to Headband" , type: OptionType.textButton),
                         ZVOption(name: "Connection to Lights", type: .textButton),
@@ -28,12 +32,16 @@ class HomeViewController: UIViewController, StreamDelegate {
     
     override func viewWillAppear(_ animated: Bool){
         super.viewDidLoad()
+        bgChanger.delegate = self
+        bgChanger.startUpdates()
+        formatTable(tableView: optionsTableView)
         colorView.layer.borderWidth = 1
         colorView.layer.borderColor = UIColor.black.cgColor
         getRelaxed.text = "Not Connected"
         self.colorView.layer.cornerRadius = self.colorView.frame.width/2
         headbandReceiver.delegate = self
         settingsButton.isHidden = true
+        
     }
     
     //Settings buttons
@@ -83,6 +91,14 @@ extension HomeViewController:HeadbandReceiverDelegate {
     }
 }
 
+extension HomeViewController:TimerDelegate {
+    func changeImage(image: UIImage) {
+        UIView.transition(with: self.backgroundView, duration: 2.0, options: .transitionCrossDissolve, animations: {
+            self.backgroundView.image = image
+        }, completion: nil)
+    }
+}
+
 //Table view stuff
 extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,6 +112,7 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
         case .textButton:
             let cell = optionsTableView.dequeueReusableCell(withIdentifier: "textButton") as? TextButtonTableViewCell
             cell?.buttonTitle.text = currentOption.name
+            
             if let cell = cell {
                 return cell
             }
@@ -107,6 +124,16 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
             }
         }
         return UITableViewCell()
+    }
+    
+    func formatTable(tableView:UITableView) {
+        tableView.layer.shadowPath = UIBezierPath(rect: tableView.bounds).cgPath
+        tableView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        tableView.layer.shadowColor = (UIColor.black).cgColor
+        tableView.layer.shadowRadius = 2
+        tableView.layer.shadowOpacity = 0.75
+        tableView.clipsToBounds = false
+        tableView.layer.cornerRadius = 0.2
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
