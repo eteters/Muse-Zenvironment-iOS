@@ -26,9 +26,13 @@ class HomeViewController: UIViewController, StreamDelegate {
     let lightConnector = LightConnector()
     
     let bgChanger = ZVTimer()
+    
+    //mode booleans
+    var useLights = true
+    
     //Set up settings objects
     let optionNames = [ ZVOption(name:"Connect to Headband" , type: OptionType.textButton),
-                        ZVOption(name: "Connection to Lights", type: .textButton),
+                        ZVOption(name: "Connection to Lights", type: .indicator),
                         ZVOption(name: "Connection to Watch", type: .indicator),
                         ZVOption(name: "Switch Zenvironment Mode", type: .textButton) ]
     
@@ -80,12 +84,14 @@ extension HomeViewController:HeadbandReceiverDelegate {
         let green = CGFloat(message.betaConcentration) //* 255.0
         let blue  = CGFloat(message.thetaRelaxation) //* 255.0
         let alpha = CGFloat(1.0)
-        let request = LightRequest(on: true,
-                                   sat: Int(message.alphaRelaxation * 255),
-                                   bri: Int(message.betaConcentration * 255),
-                                   hue: Int(message.thetaRelaxation * 65536))
-        lightConnector.lightHttpCall(request: request, dispatchQueueForHandler: DispatchQueue.main) { (statusMessage) in
-            print(statusMessage)
+        if useLights {
+            let request = LightRequest(on: true,
+                                       sat: Int(message.alphaRelaxation * 255),
+                                       bri: Int(message.betaConcentration * 255),
+                                       hue: Int(message.thetaRelaxation * 65536))
+            lightConnector.lightHttpCall(request: request, dispatchQueueForHandler: DispatchQueue.main) { (statusMessage) in
+                print(statusMessage)
+            }
         }
         UIView.animate(withDuration: 1.0, delay: 0.0, options: [], animations: {
             self.colorView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
@@ -128,6 +134,10 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
         case .indicator:
             let cell = optionsTableView.dequeueReusableCell(withIdentifier: "indicatorButton") as? ButtonIndicatorTableViewCell
             cell?.buttonTitle.text = currentOption.name
+            //Light connection
+            if indexPath.row == 1 {
+                cell?.buttonIndicator.setOn(useLights, animated: false)
+            }
             if let cell = cell {
                 return cell
             }
@@ -156,6 +166,11 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
         case 0:
             //attempting connection
             headbandReceiver.setupNetworkConnection()
+        case 1:
+            useLights = !useLights
+            if let cell = tableView.cellForRow(at: indexPath) as? ButtonIndicatorTableViewCell {
+                cell.buttonIndicator.setOn(useLights, animated: true)
+            }
 
         default:
             return
