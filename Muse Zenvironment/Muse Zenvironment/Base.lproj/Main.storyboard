@@ -17,7 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNG-yL-f2y">
+                            <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eberhard-grossgasteiger-1036384-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="0Ax-Ae-Shh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNG-yL-f2y">
                                 <rect key="frame" x="123.5" y="79" width="128" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhR-pZ-3rl">
@@ -37,12 +40,14 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Muse Zenvironment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avG-cI-zWE">
-                                <rect key="frame" x="111" y="43" width="153" height="21"/>
+                                <rect key="frame" x="111" y="43" width="153.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="-1"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RsW-K9-IfR">
+                            <tableView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RsW-K9-IfR">
                                 <rect key="frame" x="40" y="222" width="295" height="388"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -62,9 +67,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Button" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQu-ws-LuD">
-                                                    <rect key="frame" x="15" y="12" width="88" height="21"/>
+                                                    <rect key="frame" x="15" y="11.5" width="88" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.34799097140000002" green="0.75295066499999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -90,7 +95,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Button with Indicator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1L2-jR-xUE">
                                                     <rect key="frame" x="15" y="11.5" width="159" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.34799097140000002" green="0.75295066499999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -112,9 +117,9 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQG-J9-pB4">
-                                <rect key="frame" x="172" y="618" width="30" height="30"/>
+                                <rect key="frame" x="130" y="618" width="114" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="\/"/>
+                                <state key="normal" title="Dismiss Settings"/>
                                 <connections>
                                     <action selector="downButton:" destination="ieD-3f-G2S" eventType="touchUpInside" id="8ig-lV-uFw"/>
                                 </connections>
@@ -134,10 +139,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WNG-yL-f2y" firstAttribute="top" secondItem="avG-cI-zWE" secondAttribute="bottom" constant="15" id="1qR-9R-fcG"/>
+                            <constraint firstItem="wIJ-1n-aSd" firstAttribute="leading" secondItem="0Ax-Ae-Shh" secondAttribute="leading" id="8iq-eD-nWt"/>
                             <constraint firstItem="WNG-yL-f2y" firstAttribute="centerX" secondItem="wIJ-1n-aSd" secondAttribute="centerX" id="B1M-MY-Vdi"/>
                             <constraint firstItem="WNG-yL-f2y" firstAttribute="centerX" secondItem="avG-cI-zWE" secondAttribute="centerX" id="FSx-ae-7sB"/>
+                            <constraint firstItem="wIJ-1n-aSd" firstAttribute="bottom" secondItem="0Ax-Ae-Shh" secondAttribute="bottom" id="G48-nd-WBo"/>
                             <constraint firstItem="avG-cI-zWE" firstAttribute="top" secondItem="wIJ-1n-aSd" secondAttribute="top" constant="23" id="J3P-le-tB2"/>
                             <constraint firstItem="RsW-K9-IfR" firstAttribute="top" secondItem="WNG-yL-f2y" secondAttribute="bottom" constant="15" id="K5B-U9-JkC"/>
+                            <constraint firstItem="wIJ-1n-aSd" firstAttribute="trailing" secondItem="0Ax-Ae-Shh" secondAttribute="trailing" id="KBI-4b-WfW"/>
+                            <constraint firstItem="0Ax-Ae-Shh" firstAttribute="top" secondItem="wIJ-1n-aSd" secondAttribute="top" id="cS5-UD-1Lv"/>
                             <constraint firstItem="RsW-K9-IfR" firstAttribute="leading" secondItem="wIJ-1n-aSd" secondAttribute="leading" constant="40" id="jtK-wP-5Ou"/>
                             <constraint firstItem="WNG-yL-f2y" firstAttribute="top" secondItem="wIJ-1n-aSd" secondAttribute="top" constant="59" id="l8k-by-HdD"/>
                             <constraint firstItem="wIJ-1n-aSd" firstAttribute="trailing" secondItem="RsW-K9-IfR" secondAttribute="trailing" constant="40" id="qdi-5u-owZ"/>
@@ -147,6 +156,7 @@
                         <viewLayoutGuide key="safeArea" id="wIJ-1n-aSd"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="0Ax-Ae-Shh" id="0YV-CP-oeJ"/>
                         <outlet property="colorView" destination="WNG-yL-f2y" id="r3b-Lo-YJg"/>
                         <outlet property="downButton" destination="UQG-J9-pB4" id="Fnj-5s-GWo"/>
                         <outlet property="getRelaxed" destination="LhR-pZ-3rl" id="lE5-WE-o92"/>
@@ -160,4 +170,7 @@
             <point key="canvasLocation" x="-58.399999999999999" y="87.706146926536732"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="eberhard-grossgasteiger-1036384-unsplash" width="3648" height="5472"/>
+    </resources>
 </document>
