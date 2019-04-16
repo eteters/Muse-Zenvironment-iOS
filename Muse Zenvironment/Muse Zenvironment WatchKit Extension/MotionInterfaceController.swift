@@ -21,19 +21,6 @@ class MotionInterfaceController: WKInterfaceController, MotionDelegate {
    
     let motionManager = MotionManager()
    
-    private let session: WCSession? = WCSession.isSupported() ? WCSession.default : nil
-    
-    var validSession: WCSession? {
-                
-        #if os(iOS)
-        if let session = session, session.isPaired && session.isWatchAppInstalled {
-            return session
-        }
-        #elseif os(watchOS)
-        return session
-        #endif
-        return nil
-    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -49,20 +36,23 @@ class MotionInterfaceController: WKInterfaceController, MotionDelegate {
         motionManager.initMotion()
         
         //WCSession.default.delegate = HomeViewController
-        validSession?.activate()
+//        validSession?.activate()
         
     }
     
     //This will be called by the delegate
-    func updateLabels(gravityStr:String, userAccelStr:String, rotationRateStr:String, attitudeStr:String) {
+    func updateLabels(gravityVec:MotionVector, userAccelVec:MotionVector, rotationRateVec:MotionVector, attitudeVec:MotionVector) {
         // The active check is set when we start and stop recording.
-            gravityLabel.setText(gravityStr)
-            accelerationLabel.setText(userAccelStr)
-            rotationLabel.setText(rotationRateStr)
-            attitudeLabel.setText(attitudeStr)
-        WCSession.default.sendMessage(["activity":"Sending data booyah"], replyHandler: nil) { (error) in
-            print(error.localizedDescription)
-        }
+            gravityLabel.setText(makeMotionString(vec: gravityVec))
+            accelerationLabel.setText(makeMotionString(vec: userAccelVec))
+            rotationLabel.setText(makeMotionString(vec: rotationRateVec))
+            attitudeLabel.setText(makeMotionString(vec: attitudeVec))
+        
+        
+    }
+    
+    func makeMotionString(vec:MotionVector) -> String {
+        return String(format: "X: %.1f Y: %.1f Z: %.1f" , vec.x, vec.y, vec.z)
     }
 
     override func didDeactivate() {

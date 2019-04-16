@@ -10,23 +10,7 @@ import UIKit
 import HealthKit
 import WatchConnectivity
 
-class HomeViewController: UIViewController, StreamDelegate, WCSessionDelegate {
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        return
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        return
-    }
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        return
-    }
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        if let thing = userInfo["activity"] as? String {
-            getRelaxed.text = thing
-        }
-    }
+class HomeViewController: UIViewController, StreamDelegate {
     
     //Interface outlet connections
     @IBOutlet weak var colorView: UIView!
@@ -76,7 +60,6 @@ class HomeViewController: UIViewController, StreamDelegate, WCSessionDelegate {
         headbandReceiver.delegate = self
         settingsButton.isHidden = true
         
-        
         NotificationCenter.default.addObserver(
             self, selector: #selector(type(of: self).dataDidFlow(_:)),
             name: .dataDidFlow, object: nil
@@ -90,10 +73,14 @@ class HomeViewController: UIViewController, StreamDelegate, WCSessionDelegate {
     //
     @objc
     func dataDidFlow(_ notification: Notification) {
-        print("We made it!")
+        //print("We made it!")
         if let message = notification.object as? [String:Any]{
-            if let status = message["activity"] as? String {
-                print("Status is " + status)
+            if let gravStatus = message["gravityLevel"] as? String {
+                print("gravStatus is " + gravStatus)
+                getRelaxed.text = gravStatus
+            }
+            if let status = message["activityLevel"] as? String {
+                print("accelStatus is " + status)
                 getRelaxed.text = status
             }
         }

@@ -14,6 +14,26 @@ import ClockKit
 #endif
 
 
+enum ActivityLevel: CustomStringConvertible {
+    case unknown
+    case maybeStressed
+    case sedentary
+    case active
+    case veryActive
+    
+    var description : String {
+        switch self {
+        // Use Internationalization, as appropriate.
+            case .unknown: return "Unknown"
+            case .maybeStressed: return "Maybe Stressed"
+            case .active: return "active"
+            case .sedentary: return "sedentary"
+            case .veryActive: return "very active"
+        }
+    }
+}
+
+
 extension Notification.Name {
     static let dataDidFlow = Notification.Name("DataDidFlow")
     static let activationDidComplete = Notification.Name("ActivationDidComplete")
@@ -28,6 +48,7 @@ class SessionDelegater: NSObject, WCSessionDelegate {
     //
     func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
         DispatchQueue.main.async {
+            print("Made it to the sessionDelegater")
             NotificationCenter.default.post(name: .dataDidFlow, object: message)
         }
     }

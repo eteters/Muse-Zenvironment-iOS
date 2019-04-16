@@ -82,6 +82,11 @@ class HeartRateManager {
             }
         }
     }
+    func endObserver() {
+        if let observerQuery = observerQuery {
+            healthStore.stop(observerQuery)
+        }
+    }
     
     private func fetchLatestHeartRateSample(completionHandler: @escaping (_ sample: HKQuantitySample?) -> Void) {
         guard let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate) else {

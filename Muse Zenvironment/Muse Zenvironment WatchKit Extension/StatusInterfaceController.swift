@@ -41,7 +41,7 @@ class StatusInterfaceController: WKInterfaceController, HeartDelegate {
         
         // Assume watch is connected with iphone, check whether healthkit is authorized
         heartRateManager.delegate = self
-        heartRateManager.startObserver()
+//        heartRateManager.startObserver()
         
         super.willActivate()
     }
@@ -66,8 +66,9 @@ class StatusInterfaceController: WKInterfaceController, HeartDelegate {
 
     @IBAction func workoutButtonPressed() {
         
-        workoutButton.setTitle(heartRateManager.handleWorkoutState())
-        
+//        workoutButton.setTitle(heartRateManager.handleWorkoutState())
+        heartRateManager.startObserver()
+        workoutButton.setTitle("Stop")
     }
 
 }
