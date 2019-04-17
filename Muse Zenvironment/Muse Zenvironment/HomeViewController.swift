@@ -80,22 +80,26 @@ extension HomeViewController:HeadbandReceiverDelegate {
     func receivedMessage(message: HeadbandMessage) {
         print("message in VC with alpha at \(message.alphaRelaxation)")
         getRelaxed.text = "Connected" 
-        let red   = CGFloat(message.alphaRelaxation) //* 255.0
-        let green = CGFloat(message.betaConcentration) //* 255.0
-        let blue  = CGFloat(message.thetaRelaxation) //* 255.0
+//        let red   = CGFloat(message.alphaRelaxation) //* 255.0
+//        let green = CGFloat(message.betaConcentration) //* 255.0
+//        let blue  = CGFloat(message.thetaRelaxation) //* 255.0
+        let hue = CGFloat(47000*message.movement)
+        let sat = CGFloat(254)
+        let brightness = CGFloat(127)
         let alpha = CGFloat(1.0)
         if useLights {
             let request = LightRequest(on: true,
-                                       sat: Int(message.alphaRelaxation * 255),
-                                       bri: Int(message.betaConcentration * 255),
-                                       hue: Int(message.thetaRelaxation * 65536))
+                                       sat: Int(254),
+                                       bri: Int(127),
+                                       hue: Int(47000*message.movement))
             lightConnector.lightHttpCall(request: request, dispatchQueueForHandler: DispatchQueue.main) { (statusMessage) in
                 print(statusMessage)
             }
         }
         UIView.animate(withDuration: 1.0, delay: 0.0, options: [], animations: {
-            self.colorView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
-            self.getRelaxed.textColor = UIColor(red: 1-red, green: 1-green, blue: 1-blue, alpha: alpha)
+            self.colorView.backgroundColor = UIColor(hue: hue, saturation: sat, brightness: brightness, alpha: alpha)
+//            self.colorView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
+            self.getRelaxed.textColor = UIColor(hue: 1-hue, saturation: 1-sat, brightness: 1-brightness, alpha: alpha)
         }, completion: nil)
     }
     
