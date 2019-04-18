@@ -173,79 +173,7 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
         case 3:
             //do health stuf
             //pretend that the mode is heartrate and not heartrate for no
-            guard let hkStore = healthKitStore else {
-                return
-            }
-            
-            let heartRateSampleType = HKObjectType.quantityType(forIdentifier: .heartRate)
-            
-//            if let observerQuery = observerQuery {
-//                hkStore.stop(observerQuery)
-//            }
-//            let anchorQuery = HKAnchoredObjectQuery(type: heartRateSampleType!, predicate: nil, anchor: nil, limit: Int(HKObjectQueryNoLimit)) { (query, samples, deletedObjects, qAnchor, error) in
-//                if let error = error {
-//                    print("Error: \(error.localizedDescription)")
-//                    return
-//                }
-//                if let samples = samples, let sample = samples[0] as? HKQuantitySample  {
-////                    DispatchQueue.main.async {
-//                        let heartRate = sample.quantity.doubleValue(for: self.heartRateUnit)
-//                        print("Heart Rate Sample: \(heartRate)")
-//                    self.getRelaxed.text = "\(heartRate)"
-//                }
-            
-//                self.fetchLatestHeartRateSample { (sample) in
-//                    guard let sample = sample else {
-//                        return
-//                    }
-//
-//                    DispatchQueue.main.async {
-//                        let heartRate = sample.quantity.doubleValue(for: self.heartRateUnit)
-//                        print("Heart Rate Sample: \(heartRate)")
-//                        //                        self.updateHeartRate(heartRateValue:  )
-//                    }
-//                }
-//            }
-            
-//            anchorQuery.updateHandler = { (query, samplesOrNil, deletedObjectsOrNil, newAnchor, errorOrNil) in
-//
-//                guard let samples = samplesOrNil, let deletedObjects = deletedObjectsOrNil else {
-//                    // Handle the error here.
-//                    fatalError("*** An error occurred during an update: \(errorOrNil!.localizedDescription) ***")
-//                }
-//                if let samples = samples as? [HKQuantitySample]{
-//                    for sample in samples {
-////                        DispatchQueue.main.async {
-//                            let heartRate = sample.quantity.doubleValue(for: self.heartRateUnit)
-//                            print("Heart Rate Sample: \(heartRate)")
-//                            self.getRelaxed.text = "\(heartRate)"
-//
-//                    }
-//                }
-//            }
-//            hkStore.execute(anchorQuery)
-            observerQuery = HKObserverQuery(sampleType: heartRateSampleType!, predicate: nil) { (_, _, error) in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                    return
-                }
-
-                self.fetchLatestHeartRateSample { (sample) in
-                    guard let sample = sample else {
-                        return
-                    }
-
-                    DispatchQueue.main.async {
-                        let heartRate = sample.quantity.doubleValue(for: self.heartRateUnit)
-                        print("Heart Rate Sample: \(heartRate)")
-//                        self.updateHeartRate(heartRateValue:  )
-                    }
-                }
-            }
-            if let observerQuery = observerQuery {
-                hkStore.execute(observerQuery)
-            }
-            
+            return
         case 4:
             HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
                 guard authorized else {
@@ -266,31 +194,6 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    
-    func fetchLatestHeartRateSample(completionHandler: @escaping (_ sample: HKQuantitySample?) -> Void) {
-        guard let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate) else {
-            completionHandler(nil)
-            return
-        }
-        
-        let predicate = HKQuery.predicateForSamples(withStart: Date.distantPast, end: Date(), options: .strictEndDate)
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-        let query = HKSampleQuery(sampleType: sampleType,
-                                  predicate: predicate,
-                                  limit: Int(HKObjectQueryNoLimit),
-                                  sortDescriptors: [sortDescriptor]) { (_, results, error) in
-                                    if let error = error {
-                                        print("Error: \(error.localizedDescription)")
-                                        return
-                                    }
-                                    
-                                    completionHandler(results?[0] as? HKQuantitySample)
-        }
-        if let hkStore = healthKitStore {
-            hkStore.execute(query)
-        }
     }
     
 }
