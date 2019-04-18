@@ -138,6 +138,13 @@ class MotionManager{
             
             gravityAverage = total/25
             
+            if accelAverage >= 2.0 {
+                accelAverage = 2.0
+            }
+            
+            accelAverage = accelAverage / 2.0
+
+            print(accelAverage)
             
             WCSession.default.sendMessage(["activityLevel": "\(accelAverage)", "gravityLevel": "\(gravityAverage)"], replyHandler: nil) { (error) in
                 print(error.localizedDescription)
