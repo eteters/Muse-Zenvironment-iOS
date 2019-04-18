@@ -27,7 +27,7 @@ class HeadbandReceiver: NSObject {
         var readStream: Unmanaged<CFReadStream>?
         var writeStream: Unmanaged<CFWriteStream>?
 
-        CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, "localhost" as CFString, 8080, &readStream, &writeStream)
+        CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, "192.168.2.24" as CFString, 8089, &readStream, &writeStream)
 
         inputStream = readStream!.takeRetainedValue()
         outputStream = writeStream!.takeRetainedValue()
@@ -53,12 +53,12 @@ extension HeadbandReceiver: StreamDelegate {
             //not sure what case this is, end of connection? If so, needs .messageError
         case Stream.Event.errorOccurred:
             print("error occurred")
-            delegate?.messageError(errorString: "Stream error occurred")
+            delegate?.messageError(errorString: "Stream .errorOccurred")
         case Stream.Event.hasSpaceAvailable:
             print("has space available")
         default:
             print("some other event...")
-            delegate?.messageError(errorString: "Stream error occurred")
+            delegate?.messageError(errorString: "Stream default error occurred")
             break
         }
     }
@@ -72,7 +72,7 @@ extension HeadbandReceiver: StreamDelegate {
             if numberOfBytesRead < 0 {
                 if let _ = stream.streamError{
                     print("stream error?")
-                    delegate?.messageError(errorString: "Stream error occurred")
+                    delegate?.messageError(errorString: "Stream error occurred, numbytes read<0")
                     break
                 }
             }
@@ -82,7 +82,7 @@ extension HeadbandReceiver: StreamDelegate {
             }
             else {
                 print("error!")
-                delegate?.messageError(errorString: "Stream error occurred")
+                delegate?.messageError(errorString: "Stream error occurred, on message = processedmsg")
             }
         }
     }

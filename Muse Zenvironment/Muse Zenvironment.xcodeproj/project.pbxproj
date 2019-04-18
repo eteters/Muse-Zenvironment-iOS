@@ -1,10 +1,10 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 50;
-	objects = {
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 50;
+    objects = {
 
 /* Begin PBXBuildFile section */
 		AE4364A622419BE0008C5486 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4364A522419BE0008C5486 /* HealthKit.framework */; };
@@ -41,59 +41,59 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AEE77B0E2202256B0042AE11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEE77AF1220225670042AE11 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEE77AF8220225670042AE11;
-			remoteInfo = "Muse Zenvironment";
-		};
-		AEE77B192202256B0042AE11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEE77AF1220225670042AE11 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEE77AF8220225670042AE11;
-			remoteInfo = "Muse Zenvironment";
-		};
-		AEE77B232202256B0042AE11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEE77AF1220225670042AE11 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEE77B202202256B0042AE11;
-			remoteInfo = "Muse Zenvironment WatchKit App";
-		};
-		AEE77B322202256C0042AE11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEE77AF1220225670042AE11 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEE77B2F2202256C0042AE11;
-			remoteInfo = "Muse Zenvironment WatchKit Extension";
-		};
+        AEE77B0E2202256B0042AE11 /* PBXContainerItemProxy */ = {
+            isa = PBXContainerItemProxy;
+            containerPortal = AEE77AF1220225670042AE11 /* Project object */;
+            proxyType = 1;
+            remoteGlobalIDString = AEE77AF8220225670042AE11;
+            remoteInfo = "Muse Zenvironment";
+        };
+        AEE77B192202256B0042AE11 /* PBXContainerItemProxy */ = {
+            isa = PBXContainerItemProxy;
+            containerPortal = AEE77AF1220225670042AE11 /* Project object */;
+            proxyType = 1;
+            remoteGlobalIDString = AEE77AF8220225670042AE11;
+            remoteInfo = "Muse Zenvironment";
+        };
+        AEE77B232202256B0042AE11 /* PBXContainerItemProxy */ = {
+            isa = PBXContainerItemProxy;
+            containerPortal = AEE77AF1220225670042AE11 /* Project object */;
+            proxyType = 1;
+            remoteGlobalIDString = AEE77B202202256B0042AE11;
+            remoteInfo = "Muse Zenvironment WatchKit App";
+        };
+        AEE77B322202256C0042AE11 /* PBXContainerItemProxy */ = {
+            isa = PBXContainerItemProxy;
+            containerPortal = AEE77AF1220225670042AE11 /* Project object */;
+            proxyType = 1;
+            remoteGlobalIDString = AEE77B2F2202256C0042AE11;
+            remoteInfo = "Muse Zenvironment WatchKit Extension";
+        };
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AEE77B462202256C0042AE11 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				AEE77B312202256C0042AE11 /* Muse Zenvironment WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEE77B4A2202256C0042AE11 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				AEE77B222202256B0042AE11 /* Muse Zenvironment WatchKit App.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        AEE77B462202256C0042AE11 /* Embed App Extensions */ = {
+            isa = PBXCopyFilesBuildPhase;
+            buildActionMask = 2147483647;
+            dstPath = "";
+            dstSubfolderSpec = 13;
+            files = (
+                AEE77B312202256C0042AE11 /* Muse Zenvironment WatchKit Extension.appex in Embed App Extensions */,
+            );
+            name = "Embed App Extensions";
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        AEE77B4A2202256C0042AE11 /* Embed Watch Content */ = {
+            isa = PBXCopyFilesBuildPhase;
+            buildActionMask = 2147483647;
+            dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+            dstSubfolderSpec = 16;
+            files = (
+                AEE77B222202256B0042AE11 /* Muse Zenvironment WatchKit App.app in Embed Watch Content */,
+            );
+            name = "Embed Watch Content";
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -296,95 +296,95 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AEE77AF8220225670042AE11 /* Muse Zenvironment */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AEE77B4B2202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse Zenvironment" */;
-			buildPhases = (
-				AEE77AF5220225670042AE11 /* Sources */,
-				AEE77AF6220225670042AE11 /* Frameworks */,
-				AEE77AF7220225670042AE11 /* Resources */,
-				AEE77B4A2202256C0042AE11 /* Embed Watch Content */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AEE77B242202256B0042AE11 /* PBXTargetDependency */,
-			);
-			name = "Muse Zenvironment";
-			productName = "Muse Zenvironment";
-			productReference = AEE77AF9220225670042AE11 /* Muse Zenvironment.app */;
-			productType = "com.apple.product-type.application";
-		};
-		AEE77B0C2202256B0042AE11 /* Muse ZenvironmentTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AEE77B4E2202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse ZenvironmentTests" */;
-			buildPhases = (
-				AEE77B092202256B0042AE11 /* Sources */,
-				AEE77B0A2202256B0042AE11 /* Frameworks */,
-				AEE77B0B2202256B0042AE11 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AEE77B0F2202256B0042AE11 /* PBXTargetDependency */,
-			);
-			name = "Muse ZenvironmentTests";
-			productName = "Muse ZenvironmentTests";
-			productReference = AEE77B0D2202256B0042AE11 /* Muse ZenvironmentTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		AEE77B172202256B0042AE11 /* Muse ZenvironmentUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AEE77B512202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse ZenvironmentUITests" */;
-			buildPhases = (
-				AEE77B142202256B0042AE11 /* Sources */,
-				AEE77B152202256B0042AE11 /* Frameworks */,
-				AEE77B162202256B0042AE11 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AEE77B1A2202256B0042AE11 /* PBXTargetDependency */,
-			);
-			name = "Muse ZenvironmentUITests";
-			productName = "Muse ZenvironmentUITests";
-			productReference = AEE77B182202256B0042AE11 /* Muse ZenvironmentUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		AEE77B202202256B0042AE11 /* Muse Zenvironment WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AEE77B472202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse Zenvironment WatchKit App" */;
-			buildPhases = (
-				AEE77B1F2202256B0042AE11 /* Resources */,
-				AEE77B462202256C0042AE11 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AEE77B332202256C0042AE11 /* PBXTargetDependency */,
-			);
-			name = "Muse Zenvironment WatchKit App";
-			productName = "Muse Zenvironment WatchKit App";
-			productReference = AEE77B212202256B0042AE11 /* Muse Zenvironment WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		AEE77B2F2202256C0042AE11 /* Muse Zenvironment WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AEE77B432202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse Zenvironment WatchKit Extension" */;
-			buildPhases = (
-				AEE77B2C2202256C0042AE11 /* Sources */,
-				AEE77B2D2202256C0042AE11 /* Frameworks */,
-				AEE77B2E2202256C0042AE11 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Muse Zenvironment WatchKit Extension";
-			productName = "Muse Zenvironment WatchKit Extension";
-			productReference = AEE77B302202256C0042AE11 /* Muse Zenvironment WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
+        AEE77AF8220225670042AE11 /* Muse Zenvironment */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = AEE77B4B2202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse Zenvironment" */;
+            buildPhases = (
+                AEE77AF5220225670042AE11 /* Sources */,
+                AEE77AF6220225670042AE11 /* Frameworks */,
+                AEE77AF7220225670042AE11 /* Resources */,
+                AEE77B4A2202256C0042AE11 /* Embed Watch Content */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+                AEE77B242202256B0042AE11 /* PBXTargetDependency */,
+            );
+            name = "Muse Zenvironment";
+            productName = "Muse Zenvironment";
+            productReference = AEE77AF9220225670042AE11 /* Muse Zenvironment.app */;
+            productType = "com.apple.product-type.application";
+        };
+        AEE77B0C2202256B0042AE11 /* Muse ZenvironmentTests */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = AEE77B4E2202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse ZenvironmentTests" */;
+            buildPhases = (
+                AEE77B092202256B0042AE11 /* Sources */,
+                AEE77B0A2202256B0042AE11 /* Frameworks */,
+                AEE77B0B2202256B0042AE11 /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+                AEE77B0F2202256B0042AE11 /* PBXTargetDependency */,
+            );
+            name = "Muse ZenvironmentTests";
+            productName = "Muse ZenvironmentTests";
+            productReference = AEE77B0D2202256B0042AE11 /* Muse ZenvironmentTests.xctest */;
+            productType = "com.apple.product-type.bundle.unit-test";
+        };
+        AEE77B172202256B0042AE11 /* Muse ZenvironmentUITests */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = AEE77B512202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse ZenvironmentUITests" */;
+            buildPhases = (
+                AEE77B142202256B0042AE11 /* Sources */,
+                AEE77B152202256B0042AE11 /* Frameworks */,
+                AEE77B162202256B0042AE11 /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+                AEE77B1A2202256B0042AE11 /* PBXTargetDependency */,
+            );
+            name = "Muse ZenvironmentUITests";
+            productName = "Muse ZenvironmentUITests";
+            productReference = AEE77B182202256B0042AE11 /* Muse ZenvironmentUITests.xctest */;
+            productType = "com.apple.product-type.bundle.ui-testing";
+        };
+        AEE77B202202256B0042AE11 /* Muse Zenvironment WatchKit App */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = AEE77B472202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse Zenvironment WatchKit App" */;
+            buildPhases = (
+                AEE77B1F2202256B0042AE11 /* Resources */,
+                AEE77B462202256C0042AE11 /* Embed App Extensions */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+                AEE77B332202256C0042AE11 /* PBXTargetDependency */,
+            );
+            name = "Muse Zenvironment WatchKit App";
+            productName = "Muse Zenvironment WatchKit App";
+            productReference = AEE77B212202256B0042AE11 /* Muse Zenvironment WatchKit App.app */;
+            productType = "com.apple.product-type.application.watchapp2";
+        };
+        AEE77B2F2202256C0042AE11 /* Muse Zenvironment WatchKit Extension */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = AEE77B432202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse Zenvironment WatchKit Extension" */;
+            buildPhases = (
+                AEE77B2C2202256C0042AE11 /* Sources */,
+                AEE77B2D2202256C0042AE11 /* Frameworks */,
+                AEE77B2E2202256C0042AE11 /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+            );
+            name = "Muse Zenvironment WatchKit Extension";
+            productName = "Muse Zenvironment WatchKit Extension";
+            productReference = AEE77B302202256C0042AE11 /* Muse Zenvironment WatchKit Extension.appex */;
+            productType = "com.apple.product-type.watchkit2-extension";
+        };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -452,47 +452,47 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AEE77AF7220225670042AE11 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AEE77B072202256B0042AE11 /* LaunchScreen.storyboard in Resources */,
-				AEE77B042202256B0042AE11 /* Assets.xcassets in Resources */,
-				AEE77B02220225670042AE11 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEE77B0B2202256B0042AE11 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEE77B162202256B0042AE11 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEE77B1F2202256B0042AE11 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AEE77B2A2202256B0042AE11 /* Assets.xcassets in Resources */,
-				AEE77B282202256B0042AE11 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEE77B2E2202256C0042AE11 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AEE77B3E2202256C0042AE11 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        AEE77AF7220225670042AE11 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                AEE77B072202256B0042AE11 /* LaunchScreen.storyboard in Resources */,
+                AEE77B042202256B0042AE11 /* Assets.xcassets in Resources */,
+                AEE77B02220225670042AE11 /* Main.storyboard in Resources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        AEE77B0B2202256B0042AE11 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        AEE77B162202256B0042AE11 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        AEE77B1F2202256B0042AE11 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                AEE77B2A2202256B0042AE11 /* Assets.xcassets in Resources */,
+                AEE77B282202256B0042AE11 /* Interface.storyboard in Resources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        AEE77B2E2202256C0042AE11 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                AEE77B3E2202256C0042AE11 /* Assets.xcassets in Resources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -548,53 +548,53 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AEE77B0F2202256B0042AE11 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEE77AF8220225670042AE11 /* Muse Zenvironment */;
-			targetProxy = AEE77B0E2202256B0042AE11 /* PBXContainerItemProxy */;
-		};
-		AEE77B1A2202256B0042AE11 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEE77AF8220225670042AE11 /* Muse Zenvironment */;
-			targetProxy = AEE77B192202256B0042AE11 /* PBXContainerItemProxy */;
-		};
-		AEE77B242202256B0042AE11 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEE77B202202256B0042AE11 /* Muse Zenvironment WatchKit App */;
-			targetProxy = AEE77B232202256B0042AE11 /* PBXContainerItemProxy */;
-		};
-		AEE77B332202256C0042AE11 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEE77B2F2202256C0042AE11 /* Muse Zenvironment WatchKit Extension */;
-			targetProxy = AEE77B322202256C0042AE11 /* PBXContainerItemProxy */;
-		};
+        AEE77B0F2202256B0042AE11 /* PBXTargetDependency */ = {
+            isa = PBXTargetDependency;
+            target = AEE77AF8220225670042AE11 /* Muse Zenvironment */;
+            targetProxy = AEE77B0E2202256B0042AE11 /* PBXContainerItemProxy */;
+        };
+        AEE77B1A2202256B0042AE11 /* PBXTargetDependency */ = {
+            isa = PBXTargetDependency;
+            target = AEE77AF8220225670042AE11 /* Muse Zenvironment */;
+            targetProxy = AEE77B192202256B0042AE11 /* PBXContainerItemProxy */;
+        };
+        AEE77B242202256B0042AE11 /* PBXTargetDependency */ = {
+            isa = PBXTargetDependency;
+            target = AEE77B202202256B0042AE11 /* Muse Zenvironment WatchKit App */;
+            targetProxy = AEE77B232202256B0042AE11 /* PBXContainerItemProxy */;
+        };
+        AEE77B332202256C0042AE11 /* PBXTargetDependency */ = {
+            isa = PBXTargetDependency;
+            target = AEE77B2F2202256C0042AE11 /* Muse Zenvironment WatchKit Extension */;
+            targetProxy = AEE77B322202256C0042AE11 /* PBXContainerItemProxy */;
+        };
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AEE77B00220225670042AE11 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AEE77B01220225670042AE11 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AEE77B052202256B0042AE11 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AEE77B062202256B0042AE11 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		AEE77B262202256B0042AE11 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AEE77B272202256B0042AE11 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
+        AEE77B00220225670042AE11 /* Main.storyboard */ = {
+            isa = PBXVariantGroup;
+            children = (
+                AEE77B01220225670042AE11 /* Base */,
+            );
+            name = Main.storyboard;
+            sourceTree = "<group>";
+        };
+        AEE77B052202256B0042AE11 /* LaunchScreen.storyboard */ = {
+            isa = PBXVariantGroup;
+            children = (
+                AEE77B062202256B0042AE11 /* Base */,
+            );
+            name = LaunchScreen.storyboard;
+            sourceTree = "<group>";
+        };
+        AEE77B262202256B0042AE11 /* Interface.storyboard */ = {
+            isa = PBXVariantGroup;
+            children = (
+                AEE77B272202256B0042AE11 /* Base */,
+            );
+            name = Interface.storyboard;
+            sourceTree = "<group>";
+        };
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -939,61 +939,61 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AEE77AF4220225670042AE11 /* Build configuration list for PBXProject "Muse Zenvironment" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEE77B412202256C0042AE11 /* Debug */,
-				AEE77B422202256C0042AE11 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AEE77B432202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse Zenvironment WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEE77B442202256C0042AE11 /* Debug */,
-				AEE77B452202256C0042AE11 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AEE77B472202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse Zenvironment WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEE77B482202256C0042AE11 /* Debug */,
-				AEE77B492202256C0042AE11 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AEE77B4B2202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse Zenvironment" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEE77B4C2202256C0042AE11 /* Debug */,
-				AEE77B4D2202256C0042AE11 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AEE77B4E2202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse ZenvironmentTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEE77B4F2202256C0042AE11 /* Debug */,
-				AEE77B502202256C0042AE11 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AEE77B512202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse ZenvironmentUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEE77B522202256C0042AE11 /* Debug */,
-				AEE77B532202256C0042AE11 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
+        AEE77AF4220225670042AE11 /* Build configuration list for PBXProject "Muse Zenvironment" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                AEE77B412202256C0042AE11 /* Debug */,
+                AEE77B422202256C0042AE11 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        AEE77B432202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse Zenvironment WatchKit Extension" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                AEE77B442202256C0042AE11 /* Debug */,
+                AEE77B452202256C0042AE11 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        AEE77B472202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse Zenvironment WatchKit App" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                AEE77B482202256C0042AE11 /* Debug */,
+                AEE77B492202256C0042AE11 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        AEE77B4B2202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse Zenvironment" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                AEE77B4C2202256C0042AE11 /* Debug */,
+                AEE77B4D2202256C0042AE11 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        AEE77B4E2202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse ZenvironmentTests" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                AEE77B4F2202256C0042AE11 /* Debug */,
+                AEE77B502202256C0042AE11 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        AEE77B512202256C0042AE11 /* Build configuration list for PBXNativeTarget "Muse ZenvironmentUITests" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                AEE77B522202256C0042AE11 /* Debug */,
+                AEE77B532202256C0042AE11 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
 /* End XCConfigurationList section */
-	};
-	rootObject = AEE77AF1220225670042AE11 /* Project object */;
+    };
+    rootObject = AEE77AF1220225670042AE11 /* Project object */;
 }
