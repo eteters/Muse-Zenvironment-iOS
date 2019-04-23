@@ -9,6 +9,7 @@
 import UIKit
 import HealthKit
 import WatchConnectivity
+import Darwin
 
 class HomeViewController: UIViewController, StreamDelegate {
     
@@ -92,9 +93,16 @@ class HomeViewController: UIViewController, StreamDelegate {
                 print("gravStatus is " + gravStatus)
                 getRelaxed.text = gravStatus
             }
-            if let status = message["activityLevel"] as? String {
-                print("accelStatus is " + status)
-                getRelaxed.text = status
+            if let status = message["activityLevel"] as? Double {
+                print("accelStatus is  \(status)")
+                getRelaxed.text = "\(status)"
+                let request = LightRequest(on: true,
+                                           sat: Int(254),
+                                           bri: Int(127),
+                                           hue: Int(47000*status))
+                lightConnector.lightHttpCall(request: request, dispatchQueueForHandler: DispatchQueue.main) { (statusMessage) in
+                    print(statusMessage)
+                }
             }
         }
     }
@@ -119,6 +127,17 @@ class HomeViewController: UIViewController, StreamDelegate {
         }, completion: nil)
         
     }
+    
+    func formatTable(tableView:UITableView) {
+        tableView.layer.shadowPath = UIBezierPath(rect: tableView.bounds).cgPath
+        tableView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        tableView.layer.shadowColor = (UIColor.black).cgColor
+        tableView.layer.shadowRadius = 2
+        tableView.layer.shadowOpacity = 0.75
+        tableView.clipsToBounds = false
+        tableView.layer.cornerRadius = 0.2
+    }
+    
 }
 
 //Thing I implement to fulfil my role as a delegate so I can receive messages on the receiver's time
@@ -185,6 +204,7 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
                 return cell
             }
         case .indicator:
+            
             let cell = optionsTableView.dequeueReusableCell(withIdentifier: "indicatorButton") as? ButtonIndicatorTableViewCell
             cell?.buttonTitle.text = currentOption.name
             //Light connection
@@ -196,16 +216,6 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
             }
         }
         return UITableViewCell()
-    }
-    
-    func formatTable(tableView:UITableView) {
-        tableView.layer.shadowPath = UIBezierPath(rect: tableView.bounds).cgPath
-        tableView.layer.shadowOffset = CGSize(width: 2, height: 2)
-        tableView.layer.shadowColor = (UIColor.black).cgColor
-        tableView.layer.shadowRadius = 2
-        tableView.layer.shadowOpacity = 0.75
-        tableView.clipsToBounds = false
-        tableView.layer.cornerRadius = 0.2
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -223,6 +233,7 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
             useLights = !useLights
             if let cell = tableView.cellForRow(at: indexPath) as? ButtonIndicatorTableViewCell {
                 cell.buttonIndicator.setOn(useLights, animated: true)
+            }
         case 3:
             //do health stuf
             //pretend that the mode is heartrate and not heartrate for no
@@ -241,12 +252,12 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
                 self.healthKitStore = HKHealthStore()
                 print("HealthKit Successfully Authorized.")
             }
-
+                
         default:
-            return
+                return
+            }
+            
+            tableView.deselectRow(at: indexPath, animated: true)
         }
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
 }
+

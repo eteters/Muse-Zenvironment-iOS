@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/evanteters/Documents/College/Senior/Capstone top level project/Muse-Zenvironment-iOS/Muse Zenvironment/Muse Zenvironment/LightConnector.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/evanteters/Documents/College/Senior/Capstone top level project/Muse-Zenvironment-iOS/Muse Zenvironment/Muse Zenvironment/LightRequest.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/evanteters/Documents/College/Senior/Capstone top level project/Muse-Zenvironment-iOS/Muse Zenvironment/Muse Zenvironment/ZVTimer.swift">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

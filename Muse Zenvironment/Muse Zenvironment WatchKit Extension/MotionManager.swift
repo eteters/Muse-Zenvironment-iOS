@@ -146,7 +146,7 @@ class MotionManager{
 
             print(accelAverage)
             
-            WCSession.default.sendMessage(["activityLevel": "\(accelAverage)", "gravityLevel": "\(gravityAverage)"], replyHandler: nil) { (error) in
+            WCSession.default.sendMessage(["activityLevel": accelAverage, "gravityLevel": "\(gravityAverage)"], replyHandler: nil) { (error) in
                 print(error.localizedDescription)
             }
             
