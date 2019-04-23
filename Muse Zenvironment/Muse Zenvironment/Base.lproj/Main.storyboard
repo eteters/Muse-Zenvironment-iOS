@@ -107,6 +107,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="buttonIndicator" destination="bFc-hs-enE" id="mp8-FC-NZQ"/>
                                             <outlet property="buttonTitle" destination="1L2-jR-xUE" id="k4h-KL-zCb"/>
                                         </connections>
                                     </tableViewCell>
