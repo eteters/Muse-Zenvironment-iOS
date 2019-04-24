@@ -19,6 +19,18 @@
 		AEA35DCA2268036E00EF50ED /* LightConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA35DC92268036E00EF50ED /* LightConnector.swift */; };
 		AEA35DCC2268037900EF50ED /* LightRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA35DCB2268037900EF50ED /* LightRequest.swift */; };
 		AEA35DCE2268037C00EF50ED /* ZVTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA35DCD2268037C00EF50ED /* ZVTimer.swift */; };
+		AEA35E2F226FB1C900EF50ED /* 3) Rain - occasional thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AEA35E24226FB1C700EF50ED /* 3) Rain - occasional thunder.mp3 */; };
+		AEA35E30226FB1C900EF50ED /* 2) Rain - gentle thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AEA35E25226FB1C700EF50ED /* 2) Rain - gentle thunder.mp3 */; };
+		AEA35E31226FB1C900EF50ED /* 7) Nature - waterfall.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AEA35E26226FB1C700EF50ED /* 7) Nature - waterfall.mp3 */; };
+		AEA35E32226FB1C900EF50ED /* 10) Nature - birds, occasional insects.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AEA35E27226FB1C800EF50ED /* 10) Nature - birds, occasional insects.mp3 */; };
+		AEA35E33226FB1C900EF50ED /* 4) Rain - on trees.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AEA35E28226FB1C800EF50ED /* 4) Rain - on trees.mp3 */; };
+		AEA35E34226FB1C900EF50ED /* 8) Nature - wind, cicadas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AEA35E29226FB1C800EF50ED /* 8) Nature - wind, cicadas.mp3 */; };
+		AEA35E35226FB1C900EF50ED /* 1) Rain - medium thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AEA35E2A226FB1C800EF50ED /* 1) Rain - medium thunder.mp3 */; };
+		AEA35E36226FB1C900EF50ED /* 6) Waves - med.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AEA35E2B226FB1C800EF50ED /* 6) Waves - med.mp3 */; };
+		AEA35E37226FB1C900EF50ED /* 9) Nature - birds, chimes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AEA35E2C226FB1C800EF50ED /* 9) Nature - birds, chimes.mp3 */; };
+		AEA35E38226FB1C900EF50ED /* 11) Nature - birds only.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AEA35E2D226FB1C900EF50ED /* 11) Nature - birds only.mp3 */; };
+		AEA35E39226FB1C900EF50ED /* 5) Waves - loud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AEA35E2E226FB1C900EF50ED /* 5) Waves - loud.mp3 */; };
+		AEA35E3D226FB34000EF50ED /* ZVAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA35E3C226FB34000EF50ED /* ZVAudioManager.swift */; };
 		AEA9026D225D473C0098DEC9 /* MotionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA9026B225D47360098DEC9 /* MotionInterfaceController.swift */; };
 		AEA90270225FC2800098DEC9 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA9026F225FC2800098DEC9 /* HeartRateManager.swift */; };
 		AEA90272225FCD8E0098DEC9 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA90271225FCD8E0098DEC9 /* MotionManager.swift */; };
@@ -112,6 +124,18 @@
 		AEA35DC92268036E00EF50ED /* LightConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LightConnector.swift; path = "/Users/evanteters/Documents/College/Senior/Capstone top level project/Muse-Zenvironment-iOS/Muse Zenvironment/Muse Zenvironment/LightConnector.swift"; sourceTree = "<absolute>"; };
 		AEA35DCB2268037900EF50ED /* LightRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LightRequest.swift; path = "/Users/evanteters/Documents/College/Senior/Capstone top level project/Muse-Zenvironment-iOS/Muse Zenvironment/Muse Zenvironment/LightRequest.swift"; sourceTree = "<absolute>"; };
 		AEA35DCD2268037C00EF50ED /* ZVTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ZVTimer.swift; path = "/Users/evanteters/Documents/College/Senior/Capstone top level project/Muse-Zenvironment-iOS/Muse Zenvironment/Muse Zenvironment/ZVTimer.swift"; sourceTree = "<absolute>"; };
+		AEA35E24226FB1C700EF50ED /* 3) Rain - occasional thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "3) Rain - occasional thunder.mp3"; sourceTree = "<group>"; };
+		AEA35E25226FB1C700EF50ED /* 2) Rain - gentle thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "2) Rain - gentle thunder.mp3"; sourceTree = "<group>"; };
+		AEA35E26226FB1C700EF50ED /* 7) Nature - waterfall.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "7) Nature - waterfall.mp3"; sourceTree = "<group>"; };
+		AEA35E27226FB1C800EF50ED /* 10) Nature - birds, occasional insects.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10) Nature - birds, occasional insects.mp3"; sourceTree = "<group>"; };
+		AEA35E28226FB1C800EF50ED /* 4) Rain - on trees.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "4) Rain - on trees.mp3"; sourceTree = "<group>"; };
+		AEA35E29226FB1C800EF50ED /* 8) Nature - wind, cicadas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "8) Nature - wind, cicadas.mp3"; sourceTree = "<group>"; };
+		AEA35E2A226FB1C800EF50ED /* 1) Rain - medium thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "1) Rain - medium thunder.mp3"; sourceTree = "<group>"; };
+		AEA35E2B226FB1C800EF50ED /* 6) Waves - med.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "6) Waves - med.mp3"; sourceTree = "<group>"; };
+		AEA35E2C226FB1C800EF50ED /* 9) Nature - birds, chimes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "9) Nature - birds, chimes.mp3"; sourceTree = "<group>"; };
+		AEA35E2D226FB1C900EF50ED /* 11) Nature - birds only.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "11) Nature - birds only.mp3"; sourceTree = "<group>"; };
+		AEA35E2E226FB1C900EF50ED /* 5) Waves - loud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "5) Waves - loud.mp3"; sourceTree = "<group>"; };
+		AEA35E3C226FB34000EF50ED /* ZVAudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZVAudioManager.swift; sourceTree = "<group>"; };
 		AEA9026B225D47360098DEC9 /* MotionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionInterfaceController.swift; sourceTree = "<group>"; };
 		AEA9026F225FC2800098DEC9 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateManager.swift; sourceTree = "<group>"; };
 		AEA90271225FCD8E0098DEC9 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
@@ -189,6 +213,24 @@
 			path = "Table view cells";
 			sourceTree = "<group>";
 		};
+		AEA35E23226FB1A500EF50ED /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				AEA35E2A226FB1C800EF50ED /* 1) Rain - medium thunder.mp3 */,
+				AEA35E25226FB1C700EF50ED /* 2) Rain - gentle thunder.mp3 */,
+				AEA35E24226FB1C700EF50ED /* 3) Rain - occasional thunder.mp3 */,
+				AEA35E28226FB1C800EF50ED /* 4) Rain - on trees.mp3 */,
+				AEA35E2E226FB1C900EF50ED /* 5) Waves - loud.mp3 */,
+				AEA35E2B226FB1C800EF50ED /* 6) Waves - med.mp3 */,
+				AEA35E26226FB1C700EF50ED /* 7) Nature - waterfall.mp3 */,
+				AEA35E29226FB1C800EF50ED /* 8) Nature - wind, cicadas.mp3 */,
+				AEA35E2C226FB1C800EF50ED /* 9) Nature - birds, chimes.mp3 */,
+				AEA35E27226FB1C800EF50ED /* 10) Nature - birds, occasional insects.mp3 */,
+				AEA35E2D226FB1C900EF50ED /* 11) Nature - birds only.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		AEA9026E225FC1D90098DEC9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +277,7 @@
 		AEE77AFB220225670042AE11 /* Muse Zenvironment */ = {
 			isa = PBXGroup;
 			children = (
+				AEA35E3C226FB34000EF50ED /* ZVAudioManager.swift */,
 				AEA35DCD2268037C00EF50ED /* ZVTimer.swift */,
 				AEA35DCB2268037900EF50ED /* LightRequest.swift */,
 				AEA35DC92268036E00EF50ED /* LightConnector.swift */,
@@ -249,6 +292,7 @@
 				AEC35A48224196280074A0E4 /* HealthKitSetupAssistant.swift */,
 				AE5531662213BC9400B1393B /* Table view cells */,
 				AEE77B032202256B0042AE11 /* Assets.xcassets */,
+				AEA35E23226FB1A500EF50ED /* Sounds */,
 				AEE77B052202256B0042AE11 /* LaunchScreen.storyboard */,
 				AEE77B082202256B0042AE11 /* Info.plist */,
 			);
@@ -465,9 +509,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEA35E33226FB1C900EF50ED /* 4) Rain - on trees.mp3 in Resources */,
+				AEA35E38226FB1C900EF50ED /* 11) Nature - birds only.mp3 in Resources */,
+				AEA35E36226FB1C900EF50ED /* 6) Waves - med.mp3 in Resources */,
 				AEE77B072202256B0042AE11 /* LaunchScreen.storyboard in Resources */,
+				AEA35E39226FB1C900EF50ED /* 5) Waves - loud.mp3 in Resources */,
 				AEE77B042202256B0042AE11 /* Assets.xcassets in Resources */,
+				AEA35E34226FB1C900EF50ED /* 8) Nature - wind, cicadas.mp3 in Resources */,
+				AEA35E35226FB1C900EF50ED /* 1) Rain - medium thunder.mp3 in Resources */,
+				AEA35E2F226FB1C900EF50ED /* 3) Rain - occasional thunder.mp3 in Resources */,
 				AEE77B02220225670042AE11 /* Main.storyboard in Resources */,
+				AEA35E30226FB1C900EF50ED /* 2) Rain - gentle thunder.mp3 in Resources */,
+				AEA35E31226FB1C900EF50ED /* 7) Nature - waterfall.mp3 in Resources */,
+				AEA35E37226FB1C900EF50ED /* 9) Nature - birds, chimes.mp3 in Resources */,
+				AEA35E32226FB1C900EF50ED /* 10) Nature - birds, occasional insects.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +574,7 @@
 				AEE77AFD220225670042AE11 /* AppDelegate.swift in Sources */,
 				AE7E8C0C2202309E00B6A4EC /* HomeViewController.swift in Sources */,
 				AE7E8C0E220238D800B6A4EC /* HeabandReceiver.swift in Sources */,
+				AEA35E3D226FB34000EF50ED /* ZVAudioManager.swift in Sources */,
 				AE5531632213BC6100B1393B /* TextButtonTableViewCell.swift in Sources */,
 				AEA35DCC2268037900EF50ED /* LightRequest.swift in Sources */,
 				AE5531612213B80C00B1393B /* ZVOption.swift in Sources */,

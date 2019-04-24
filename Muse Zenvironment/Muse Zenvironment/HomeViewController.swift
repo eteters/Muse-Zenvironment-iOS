@@ -10,6 +10,7 @@ import UIKit
 import HealthKit
 import WatchConnectivity
 import Darwin
+import AVFoundation
 
 class HomeViewController: UIViewController, StreamDelegate {
     
@@ -34,6 +35,8 @@ class HomeViewController: UIViewController, StreamDelegate {
     let lightConnector = LightConnector()
     
     let bgChanger = ZVTimer()
+    
+    let audioManager = ZVAudioManager()
     
     //mode booleans
     var useLights = true
@@ -80,6 +83,9 @@ class HomeViewController: UIViewController, StreamDelegate {
         )
         
         validSession?.activate()
+        
+        audioManager.startAudioSession()
+
     }
     
     // .dataDidFlow notification handler.
@@ -96,13 +102,14 @@ class HomeViewController: UIViewController, StreamDelegate {
             if let status = message["activityLevel"] as? Double {
                 print("accelStatus is  \(status)")
                 getRelaxed.text = "\(status)"
-                let request = LightRequest(on: true,
-                                           sat: Int(254),
-                                           bri: Int(127),
-                                           hue: Int(47000*status))
-                lightConnector.lightHttpCall(request: request, dispatchQueueForHandler: DispatchQueue.main) { (statusMessage) in
-                    print(statusMessage)
-                }
+//                let request = LightRequest(on: true,
+//                                           sat: Int(254),
+//                                           bri: Int(127),
+//                                           hue: Int(47000*status))
+//                lightConnector.lightHttpCall(request: request, dispatchQueueForHandler: DispatchQueue.main) { (statusMessage) in
+//                    print(statusMessage)
+//                }
+                audioManager.updateWhatShouldPlay(value: status)
             }
         }
     }
